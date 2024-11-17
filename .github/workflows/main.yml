@@ -49,4 +49,4 @@ jobs:
           source .venv/bin/activate
 
           # Run the health check script
-          python /root/dummy_projects/SSH_VM_TEMPLATE/tests/vps_health.py
+          python /root/dummy_projects/SSH_VM_TEMPLATE/src/test_pipeline.py
