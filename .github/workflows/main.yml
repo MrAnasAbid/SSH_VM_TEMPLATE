@@ -27,6 +27,6 @@ jobs:
           cd /root/dummy_projects/SSH_VM_TEMPLATE
           git pull origin main
           git status
-          source /root/.local/pipx/venvs/pdm/bin/activate
           pdm install
+          source .venv/bin/activate
           python /root/dummy_projects/SSH_VM_TEMPLATE/tests/vps_health.py
