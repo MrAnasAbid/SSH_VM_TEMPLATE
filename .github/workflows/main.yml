@@ -27,7 +27,7 @@ jobs:
         script: |
           set -e
           cd /root/dummy_projects/SSH_VM_TEMPLATE
-          git pull origin master
+          git pull origin main
           /root/.local/bin/pdm install
           source .venv/bin/activate
           python src/test_pipeline.py
