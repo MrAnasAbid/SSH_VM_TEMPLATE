@@ -15,7 +15,6 @@ jobs:
         python3 -m pip install --user pipx
         pipx install pdm || true
         echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
-        source ~/.bashrc
         pdm --version
 
     - name: Deploy using ssh
@@ -27,6 +26,7 @@ jobs:
         port: 22
         script: |
           set -e
+          source ~/.bashrc
           cd /root/dummy_projects/SSH_VM_TEMPLATE
           git pull origin main
           echo $PATH
