@@ -14,8 +14,6 @@ jobs:
         sudo apt update && sudo apt install -y python3 python3-pip python3-venv
         python3 -m pip install --user pipx
         pipx install pdm || true
-        echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
-        pdm --version
 
     - name: Deploy using ssh
       uses: appleboy/ssh-action@master
@@ -26,7 +24,7 @@ jobs:
         port: 22
         script: |
           set -e
-          source ~/.bashrc
+          export PATH="$PATH:/root/.local/bin/pdm"
           cd /root/dummy_projects/SSH_VM_TEMPLATE
           git pull origin main
           echo $PATH
