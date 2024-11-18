@@ -24,7 +24,7 @@ jobs:
         port: 22
         script: |
           set -e
-          export PATH="$PATH:/root/.local/bin/pdm"
+          export PATH="/root/.local/bin/pdm"
           cd /root/dummy_projects/SSH_VM_TEMPLATE
           git pull origin main
           echo $PATH
