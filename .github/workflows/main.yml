@@ -30,4 +30,4 @@ jobs:
           git pull origin main
           /root/.local/bin/pdm install
           /root/.local/bin/pdm venv activate
-          /root/.local/bin/pdm run python src/test_pipeline.py
+          /root/.local/bin/pdm run python tests/health_check.py
