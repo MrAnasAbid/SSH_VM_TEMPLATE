@@ -14,7 +14,8 @@ jobs:
         sudo apt update && sudo apt install -y python3 python3-pip python3-venv
         python3 -m pip install --user pipx
         pipx install pdm || true
-        export PATH="$HOME/.local/bin:$PATH"
+        echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+        source ~/.bashrc
         pdm --version
 
     - name: Deploy using ssh
@@ -28,6 +29,6 @@ jobs:
           set -e
           cd /root/dummy_projects/SSH_VM_TEMPLATE
           git pull origin main
-          /root/.local/bin/pdm install
-          source .venv/bin/activate
-          python src/test_pipeline.py
+          pdm install
+          pdm venv activate
+          pdm run python src/test_pipeline.py
