@@ -29,6 +29,8 @@ jobs:
           set -e
           cd /root/dummy_projects/SSH_VM_TEMPLATE
           git pull origin main
+          which pipx
+          which pdm
           pdm install
           pdm venv activate
           pdm run python src/test_pipeline.py
