@@ -21,7 +21,7 @@ The provided GitHub Actions workflow:
 2. Connects to the VPS using SSH.
 3. Pulls the latest code from the `main` branch.
 4. Installs project dependencies using PDM.
-5. Activates the virtual environment and runs `src/test_pipeline.py`.
+5. Activates the virtual environment and runs `tests/health_check.py`.
 
 ### How to Use
 1. Ensure your project is stored at `/root/dummy_projects/SSH_VM_TEMPLATE` on the VPS, or update the path in the workflow file.
